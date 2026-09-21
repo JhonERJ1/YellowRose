@@ -1,20 +1,11 @@
 /**
- * Orquesta la experiencia: valida la sesión con el backend, registra eventos,
- * gestiona la zona secreta y la transición hacia la confesión.
+ * Orquesta la experiencia: valida la sesión con el backend, registra eventos
+ * y lanza la animación de la rosa. (Versión solo-rosa, sin confesión.)
  */
 (function () {
   'use strict';
 
-  const stage = document.getElementById('stage');
-  const secretZone = document.getElementById('secretZone');
-  const transition = document.getElementById('transition');
-
-  const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-
   let authorized = false;
-  let eggLogged = false;
-  let opening = false;
-  let mobileArmed = false;
   let started = false;
 
   // --- Utilidades de red ---
@@ -88,56 +79,6 @@
       }
     } catch (_) { /* se mantiene el texto por defecto */ }
   }
-
-  // --- Zona secreta ---
-  function revealHint() {
-    if (!eggLogged) {
-      eggLogged = true;
-      logEvent('easter_egg_found');
-    }
-  }
-
-  function openConfession() {
-    if (opening || !authorized) return;
-    opening = true;
-
-    stage.classList.add('leaving');
-    transition.classList.add('active');
-
-    // Tras la transición luminosa, navega a la confesión.
-    setTimeout(() => { window.location.href = '/confesion'; }, 1400);
-  }
-
-  // Escritorio: hover muestra la pista (CSS) + registra hallazgo; clic abre.
-  secretZone.addEventListener('mouseenter', revealHint);
-  secretZone.addEventListener('focus', () => {
-    secretZone.classList.add('armed');
-    revealHint();
-  });
-  secretZone.addEventListener('blur', () => secretZone.classList.remove('armed'));
-
-  secretZone.addEventListener('click', (e) => {
-    if (isTouch) {
-      // Móvil: primer toque revela, segundo toque abre.
-      if (!mobileArmed) {
-        mobileArmed = true;
-        secretZone.classList.add('armed');
-        revealHint();
-        return;
-      }
-      openConfession();
-    } else {
-      openConfession();
-    }
-  });
-
-  secretZone.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      if (!mobileArmed) { mobileArmed = true; secretZone.classList.add('armed'); revealHint(); }
-      else openConfession();
-    }
-  });
 
   document.addEventListener('DOMContentLoaded', start);
   if (document.readyState !== 'loading') start();
