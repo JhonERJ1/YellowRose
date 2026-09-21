@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Panel privado</title>
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="stylesheet" href="/static/css/admin.css" />
+</head>
+<body>
+  <main class="stage">
+    <form class="admin-login" method="POST" action="/admin/login" autocomplete="off">
+      <h1>Panel privado</h1>
+      <label>Usuario
+        <input type="text" name="username" required autofocus />
+      </label>
+      <label>Contraseña
+        <input type="password" name="password" required />
+      </label>
+      <button type="submit">Entrar</button>
+      <p class="error" id="loginError">Credenciales incorrectas.</p>
+    </form>
+  </main>
+  <script src="/static/js/admin-login.js"></script>
+</body>
+</html>

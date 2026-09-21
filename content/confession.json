@@ -1,0 +1,21 @@
+{
+  "main": "Para ti ❤️",
+  "subtitle": "Dicen que las flores amarillas se regalan para desear felicidad... y a mí me hace muy feliz pensar en ti.",
+  "confession": {
+    "intro": "Hay algo que quería decirte... y es que...",
+    "line": "Me gustas. ❤️",
+    "note": "No sé bien cómo se dice esto sin sonar cursi, así que lo hice a mi manera. No espero nada; solo quería que lo supieras, con calma y sin prisa."
+  },
+  "responses": [
+    { "id": "positive",  "emoji": "💛", "text": "Tú también me gustas." },
+    { "id": "negative",  "emoji": "😂", "text": "JAJAJA... no 😭" },
+    { "id": "unsure",    "emoji": "🙈", "text": "Necesito procesar esto." },
+    { "id": "no_answer", "emoji": "🤍", "text": "No sé qué decir..." }
+  ],
+  "acknowledgements": {
+    "positive":  "No sabes la sonrisa que me vas a sacar cuando vea tu respuesta. ❤️",
+    "negative":  "JAJAJA valió la pena intentarlo😥. Todo bien, de verdad. 🤍",
+    "unsure":    "Tómate el tiempo que necesites. Te estare esperando. 🌼",
+    "no_answer": "Está bien no tener palabras. Igual ya saque esto que me calcomia a cada rato por mantenerlo oculto. 🤍"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Panel privado</title>
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="stylesheet" href="/static/css/admin.css" />
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <h1>🌹 Enlaces</h1>
+    <form method="POST" action="/admin/logout"><button type="submit" class="logout">Salir</button></form>
+  </header>
+
+  <main class="admin-main">
+    <section class="generator" id="generator">
+      <h2>Generar un enlace nuevo</h2>
+      <div class="gen-row">
+        <input type="text" id="gen-label" placeholder="Etiqueta (p. ej. Para Ana)" maxlength="80" />
+        <label class="gen-check">
+          <input type="checkbox" id="gen-activation" checked />
+          Requiere clave
+        </label>
+        <button type="button" id="gen-btn">Generar</button>
+      </div>
+      <div class="gen-result" id="gen-result" hidden>
+        <p class="gen-warn">⚠️ Copia esto ahora. El enlace no se vuelve a mostrar.</p>
+        <label>Enlace</label>
+        <div class="copy-field">
+          <input type="text" id="gen-url" readonly />
+          <button type="button" class="copy-btn" data-target="gen-url">Copiar</button>
+        </div>
+        <div id="gen-key-wrap">
+          <label>Clave de activación (envíala por separado)</label>
+          <div class="copy-field">
+            <input type="text" id="gen-key" readonly />
+            <button type="button" class="copy-btn" data-target="gen-key">Copiar</button>
+          </div>
+        </div>
+        <p class="gen-tip">No abras tú este enlace: el primer dispositivo que entre queda registrado. Envíaselo tal cual a esa persona.</p>
+      </div>
+    </section>
+
+    <p class="admin-empty" id="empty" hidden>Aún no hay enlaces generados.</p>
+    <div class="cards" id="cards"></div>
+  </main>
+
+  <script src="/static/js/admin.js"></script>
+</body>
+</html>

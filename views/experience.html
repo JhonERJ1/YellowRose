@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>🌼</title>
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="stylesheet" href="/static/css/rose.css" />
+</head>
+<body>
+  <main class="stage" id="stage" aria-label="Una rosa amarilla para ti">
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <div class="intro" id="intro">
+      <h1 id="introMain">Para ti 💛</h1>
+      <p id="introSubtitle">Las flores amarillas se regalan para desear felicidad. Y para dar la bienvenida a un nuevo comienzo</p>
+    </div>
+
+    <!-- ===================== LA ROSA (SVG) ===================== -->
+    <svg class="rose" id="rose" viewBox="0 0 400 600" role="img"
+         aria-label="Rosa amarilla dibujada con código">
+      <defs>
+        <linearGradient id="gradStem" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#4f8a4d" />
+          <stop offset="1" stop-color="#1c3a22" />
+        </linearGradient>
+        <radialGradient id="gradLeaf" cx="0.35" cy="0.35" r="0.8">
+          <stop offset="0" stop-color="#5b9a55" />
+          <stop offset="1" stop-color="#234a1f" />
+        </radialGradient>
+        <linearGradient id="gradSepal" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3f7444" />
+          <stop offset="1" stop-color="#20401d" />
+        </linearGradient>
+        <radialGradient id="gradGlow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="rgba(255,212,71,0.30)" />
+          <stop offset="0.6" stop-color="rgba(255,212,71,0.08)" />
+          <stop offset="1" stop-color="rgba(255,212,71,0)" />
+        </radialGradient>
+
+        <linearGradient id="gradOuter" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0" stop-color="#fff3c8" />
+          <stop offset="0.5" stop-color="#ffde72" />
+          <stop offset="1" stop-color="#efb42b" />
+        </linearGradient>
+        <linearGradient id="gradMid" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0" stop-color="#ffe484" />
+          <stop offset="0.5" stop-color="#ffc933" />
+          <stop offset="1" stop-color="#d99612" />
+        </linearGradient>
+        <linearGradient id="gradInner" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0" stop-color="#ffd45f" />
+          <stop offset="1" stop-color="#c9860d" />
+        </linearGradient>
+        <linearGradient id="gradCore" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0" stop-color="#ffbb35" />
+          <stop offset="1" stop-color="#a9670a" />
+        </linearGradient>
+        <radialGradient id="gradCenter" cx="0.5" cy="0.4" r="0.6">
+          <stop offset="0" stop-color="#c8860d" />
+          <stop offset="1" stop-color="#6e4205" />
+        </radialGradient>
+
+        <!-- Formas reutilizables -->
+        <path id="petal" d="M200 218
+          C170 210 156 176 172 142
+          C180 124 196 116 200 116
+          C204 116 220 124 228 142
+          C244 176 230 210 200 218 Z" />
+        <path id="sepal" d="M200 236 C196 260 197 286 200 300 C203 286 204 260 200 236 Z" />
+      </defs>
+
+      <!-- Tallo + hojas -->
+      <g class="stem-group">
+        <path class="stem" d="M205 560 C200 500 196 430 198 360 C199 320 200 280 200 240" />
+
+        <path class="leaf leaf-1" style="--ox:150px; --oy:430px; --lr:-6deg"
+              d="M199 430 C160 405 118 418 110 454 C150 472 188 458 199 430 Z" />
+        <path class="leaf-vein" d="M197 431 C165 435 138 444 116 453" />
+
+        <path class="leaf leaf-2" style="--ox:255px; --oy:470px; --lr:5deg"
+              d="M201 468 C240 444 284 456 292 492 C252 508 214 496 201 468 Z" />
+        <path class="leaf-vein" d="M203 469 C236 474 262 483 288 491" />
+      </g>
+
+      <!-- Flor -->
+      <g class="bloom-sway">
+        <ellipse class="bloom-glow" cx="200" cy="190" rx="150" ry="150" />
+
+        <!-- Sépalos -->
+        <use href="#sepal" class="sepal" style="--a:0deg;   --d:2.05s" />
+        <use href="#sepal" class="sepal" style="--a:72deg;  --d:2.12s" />
+        <use href="#sepal" class="sepal" style="--a:144deg; --d:2.19s" />
+        <use href="#sepal" class="sepal" style="--a:216deg; --d:2.26s" />
+        <use href="#sepal" class="sepal" style="--a:288deg; --d:2.33s" />
+
+        <!-- Pétalos exteriores -->
+        <use href="#petal" class="petal outer" style="--a:0deg;   --s:1.00; --d:2.40s" />
+        <use href="#petal" class="petal outer" style="--a:60deg;  --s:1.00; --d:2.55s" />
+        <use href="#petal" class="petal outer" style="--a:120deg; --s:1.00; --d:2.70s" />
+        <use href="#petal" class="petal outer" style="--a:180deg; --s:1.00; --d:2.85s" />
+        <use href="#petal" class="petal outer" style="--a:240deg; --s:1.00; --d:3.00s" />
+        <use href="#petal" class="petal outer" style="--a:300deg; --s:1.00; --d:3.15s" />
+
+        <!-- Pétalos intermedios -->
+        <use href="#petal" class="petal mid" style="--a:30deg;  --s:0.74; --d:3.35s" />
+        <use href="#petal" class="petal mid" style="--a:90deg;  --s:0.74; --d:3.48s" />
+        <use href="#petal" class="petal mid" style="--a:150deg; --s:0.74; --d:3.61s" />
+        <use href="#petal" class="petal mid" style="--a:210deg; --s:0.74; --d:3.74s" />
+        <use href="#petal" class="petal mid" style="--a:270deg; --s:0.74; --d:3.87s" />
+        <use href="#petal" class="petal mid" style="--a:330deg; --s:0.74; --d:4.00s" />
+
+        <!-- Pétalos internos -->
+        <use href="#petal" class="petal inner" style="--a:15deg;  --s:0.50; --d:4.20s" />
+        <use href="#petal" class="petal inner" style="--a:87deg;  --s:0.50; --d:4.33s" />
+        <use href="#petal" class="petal inner" style="--a:159deg; --s:0.50; --d:4.46s" />
+        <use href="#petal" class="petal inner" style="--a:231deg; --s:0.50; --d:4.59s" />
+        <use href="#petal" class="petal inner" style="--a:303deg; --s:0.50; --d:4.72s" />
+
+        <!-- Núcleo -->
+        <use href="#petal" class="petal core" style="--a:45deg;  --s:0.32; --d:4.95s" />
+        <use href="#petal" class="petal core" style="--a:165deg; --s:0.32; --d:5.08s" />
+        <use href="#petal" class="petal core" style="--a:285deg; --s:0.32; --d:5.21s" />
+
+        <circle class="center-dot" cx="200" cy="196" r="12" />
+      </g>
+    </svg>
+    <!-- =================== FIN DE LA ROSA =================== -->
+
+    <!-- Zona secreta (esquina superior derecha) -->
+    <div class="secret-zone" id="secretZone" role="button" tabindex="0"
+         aria-label="Un pequeño detalle">
+      <span class="secret-star" aria-hidden="true"></span>
+      <span class="secret-tooltip" id="secretTooltip">Quería decirte algo más...</span>
+    </div>
+
+    <div class="transition-overlay" id="transition" aria-hidden="true"></div>
+
+    <button class="audio-toggle" id="audioToggle" aria-label="Activar o silenciar música">♪</button>
+    <div class="vignette" aria-hidden="true"></div>
+  </main>
+
+  <!-- El token viaja en la URL /sorpresa/:token; el JS lo lee de ahí. -->
+  <script src="/static/js/fingerprint.js"></script>
+  <script src="/static/js/rose.js"></script>
+  <script src="/static/js/experience.js"></script>
+</body>
+</html>

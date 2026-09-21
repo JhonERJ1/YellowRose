@@ -1,0 +1,27 @@
+{
+  "name": "rosa-amarilla",
+  "version": "1.0.0",
+  "description": "Una experiencia web romantica: una rosa amarilla generada por codigo y una confesion secreta protegida por backend.",
+  "main": "server/app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node --watch server/app.js",
+    "init-db": "node server/db/init.js",
+    "reset-db": "node scripts/reset-db.js",
+    "generate-token": "node scripts/generate-token.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "better-sqlite3-session-store": "^0.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0"
+  },
+  "license": "MIT"
+}
