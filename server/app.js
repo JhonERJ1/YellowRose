@@ -69,8 +69,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ ok: false, error: 'server_error' });
 });
 
-app.listen(config.port, () => {
-  console.log(`🌹 Rosa amarilla escuchando en ${config.baseUrl}  (env: ${config.env})`);
+app.listen(config.port, '0.0.0.0', () => {
+  console.log(`🌹 Rosa amarilla escuchando en ${config.baseUrl}  (puerto ${config.port}, env: ${config.env})`);
 });
 
 module.exports = app;
