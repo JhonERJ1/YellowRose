@@ -2,7 +2,7 @@
    Aquí controlamos el crecimiento progresivo y la brisa. */
 
 .rose {
-  width: min(78vw, 46vh, 420px);
+  width: min(62vw, 34vh, 360px);
   height: auto;
   z-index: 3;
   filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.55));
