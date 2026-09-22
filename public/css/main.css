@@ -34,14 +34,17 @@ html, body {
 /* ---------- Fondo ambiental ---------- */
 .stage {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: safe center;
-  gap: clamp(4px, 1.5vh, 14px);
-  padding: clamp(16px, 4vh, 40px) 16px;
-  overflow-y: auto;
+  justify-content: center;
+  gap: clamp(8px, 2vh, 18px);
+  padding: clamp(12px, 3vh, 30px) 16px;
+  overflow: hidden;
   box-sizing: border-box;
   background:
     radial-gradient(120% 90% at 50% 12%, rgba(255, 212, 71, 0.10), transparent 55%),
