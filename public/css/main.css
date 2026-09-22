@@ -39,8 +39,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: safe center;
-  gap: clamp(10px, 3vh, 26px);
-  padding: clamp(20px, 5vh, 48px) 16px;
+  gap: clamp(4px, 1.5vh, 14px);
+  padding: clamp(16px, 4vh, 40px) 16px;
   overflow-y: auto;
   box-sizing: border-box;
   background:
@@ -80,7 +80,7 @@ html, body {
   position: relative;
   text-align: center;
   z-index: 4;
-  width: min(90vw, 640px);
+  width: min(94vw, 760px);
   flex: 0 0 auto;
   opacity: 0;
   animation: fadeUp 1.6s ease 0.4s forwards;
@@ -101,7 +101,7 @@ html, body {
   line-height: 1.5;
   color: var(--cream-dim);
   margin: 0 auto;
-  max-width: 30ch;
+  max-width: 100%;
   font-style: italic;
 }
 
