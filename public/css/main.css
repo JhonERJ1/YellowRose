@@ -36,9 +36,13 @@ html, body {
   position: fixed;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  justify-content: safe center;
+  gap: clamp(10px, 3vh, 26px);
+  padding: clamp(20px, 5vh, 48px) 16px;
+  overflow-y: auto;
+  box-sizing: border-box;
   background:
     radial-gradient(120% 90% at 50% 12%, rgba(255, 212, 71, 0.10), transparent 55%),
     radial-gradient(140% 120% at 50% 120%, rgba(47, 93, 56, 0.35), transparent 60%),
@@ -73,13 +77,11 @@ html, body {
 
 /* ---------- Texto de portada ---------- */
 .intro {
-  position: absolute;
-  top: clamp(28px, 7vh, 80px);
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   text-align: center;
   z-index: 4;
   width: min(90vw, 640px);
+  flex: 0 0 auto;
   opacity: 0;
   animation: fadeUp 1.6s ease 0.4s forwards;
   pointer-events: none;
@@ -104,8 +106,8 @@ html, body {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateX(-50%) translateY(14px); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------- Zona secreta (esquina superior derecha) ---------- */
